@@ -1,4 +1,4 @@
-package com.serkanguner.movieapp.exception;
+package com.serkanguner.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

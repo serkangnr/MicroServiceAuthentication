@@ -1,4 +1,4 @@
-package com.serkanguner.movieapp.exception;
+package com.serkanguner.exception;
 
 
 
@@ -15,17 +15,17 @@ public class GlobalExceptionHandler {
     }
 
 
-    @ExceptionHandler(MovieAppException.class)
-    public ResponseEntity<ErrorMessage> handleDemoException(MovieAppException movieAppException){
-        ErrorType errorType = movieAppException.getErrorType();
+    @ExceptionHandler(AuthMicroServiceException.class)
+    public ResponseEntity<ErrorMessage> handleDemoException(AuthMicroServiceException authMicroServiceException){
+        ErrorType errorType = authMicroServiceException.getErrorType();
 
-        return new ResponseEntity(createErrorMessage(movieAppException),errorType.getHttpStatus());
+        return new ResponseEntity(createErrorMessage(authMicroServiceException),errorType.getHttpStatus());
     }
 
-    private ErrorMessage createErrorMessage(MovieAppException movieAppException) {
+    private ErrorMessage createErrorMessage(AuthMicroServiceException authMicroServiceException) {
        return ErrorMessage.builder()
-               .code(movieAppException.getErrorType().getCode())
-               .message(movieAppException.getMessage())
+               .code(authMicroServiceException.getErrorType().getCode())
+               .message(authMicroServiceException.getMessage())
                .build();
     }
 

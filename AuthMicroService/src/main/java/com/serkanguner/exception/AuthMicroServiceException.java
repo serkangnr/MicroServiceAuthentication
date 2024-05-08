@@ -1,18 +1,18 @@
-package com.serkanguner.movieapp.exception;
+package com.serkanguner.exception;
 
 import lombok.Getter;
 
 
 @Getter
-public class MovieAppException extends RuntimeException {
+public class AuthMicroServiceException extends RuntimeException {
     private ErrorType errorType;
 
-    public MovieAppException(ErrorType errorType){
+    public AuthMicroServiceException(ErrorType errorType){
         super(errorType.getMessage());
         this.errorType = errorType;
     }
 
-    public MovieAppException(ErrorType errorType, String customMessage){
+    public AuthMicroServiceException(ErrorType errorType, String customMessage){
         super(customMessage);
         this.errorType = errorType;
     }

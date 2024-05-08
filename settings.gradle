@@ -1,2 +1,3 @@
 rootProject.name = 'Java14_21_MicroService'
+include 'AuthMicroService'
 
